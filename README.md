@@ -3,7 +3,7 @@
 This is a fork of the public ESM package that we refactor in order to fit within the FLYBO system. This includes the implementations of both ESM<sub>IPP</sub> and ESM<sub>Recons</sub> originally published by Schmid et al. at ETHZ Zurich.
 This is in particular in order to factorize the common routines shared by autonomous exploration planners to allow for fair, accurate comparative evaluation of planning systems. More info on the project's website www.flybo.org.
 
-## Citation
+## Citations
 
 ```
 @ARTICLE{Schmid20ActivePlanning,
