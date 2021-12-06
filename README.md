@@ -1,3 +1,37 @@
+# FLYBO Fork of ESM, including ESM_{IPP} and ESM_{Recons}
+
+This is a fork of the public ESM package that we refactor in order to fit within the FLYBO system.
+This is in particular in order to factorize the common routines shared by autonomous exploration planners to allow for fair, accurate comparative evaluation of planning systems. More info on the project's website www.flybo.org.
+
+## Citation
+
+```
+@ARTICLE{8633925,
+    author={M. {Selin} and M. {Tiger} and D. {Duberg} and F. {Heintz} and P. {Jensfelt}},
+    journal={IEEE Robotics and Automation Letters},
+    title={Efficient Autonomous Exploration Planning of Large-Scale 3-D Environments},
+    year={2019},
+    volume={4},
+    number={2},
+    pages={1699-1706},
+    keywords={Planning;Sensors;Uncertainty;Drones;Mobile robots;Path planning;Search and rescue robots;motion and path planning;mapping},
+    doi={10.1109/LRA.2019.2897343},
+    ISSN={2377-3766},
+    month={April},}
+```
+
+```
+@inproceedings{Brunel3DV2021,
+  TITLE = {FLYBO: A Unified Benchmark Environment for Autonomous Flying Robots},
+  AUTHOR = {Brunel, Anthony and Bourki, Amine and Strauss, Olivier and Demonceaux, C{\'e}dric},
+  BOOKTITLE = {9th International Conference on 3D Vision},
+  ADDRESS = {Online, United Kingdom},
+  YEAR = {2021}
+}
+```
+
+## Original ReadMe
+
 # mav\_active\_3d\_planning
 **mav\_active\_3d\_planning** is a modular framework for online informative path planner (IPP) design. 
 We provide a modular framework for creating, evaluating and employing primarily sampling based, receding horizon algorithms that optimize a gain while minimizing a cost.
