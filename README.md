@@ -1,23 +1,24 @@
-# FLYBO Fork of ESM, including ESM<sub>IPP</sub> and ESM_{Recons}
+# FLYBO Fork of ESM, including ESM<sub>IPP</sub> and ESM<sub>Recons</sub>
 
-This is a fork of the public ESM package that we refactor in order to fit within the FLYBO system.
+This is a fork of the public ESM package that we refactor in order to fit within the FLYBO system. This includes the implementations of both ESM<sub>IPP</sub> and ESM<sub>Recons</sub> originally published by Schmid et al.
 This is in particular in order to factorize the common routines shared by autonomous exploration planners to allow for fair, accurate comparative evaluation of planning systems. More info on the project's website www.flybo.org.
 
 ## Citation
 
 ```
-@ARTICLE{8633925,
-    author={M. {Selin} and M. {Tiger} and D. {Duberg} and F. {Heintz} and P. {Jensfelt}},
-    journal={IEEE Robotics and Automation Letters},
-    title={Efficient Autonomous Exploration Planning of Large-Scale 3-D Environments},
-    year={2019},
-    volume={4},
-    number={2},
-    pages={1699-1706},
-    keywords={Planning;Sensors;Uncertainty;Drones;Mobile robots;Path planning;Search and rescue robots;motion and path planning;mapping},
-    doi={10.1109/LRA.2019.2897343},
-    ISSN={2377-3766},
-    month={April},}
+@ARTICLE{Schmid20ActivePlanning,
+  author={L. {Schmid} and M. {Pantic} and R. {Khanna} and L. {Ott} and R. {Siegwart} and J. {Nieto}},
+  journal={IEEE Robotics and Automation Letters},
+  title={An Efficient Sampling-Based Method for Online Informative Path Planning in Unknown Environments},
+  year={2020},
+  volume={5},
+  number={2},
+  pages={1500-1507},
+  keywords={Motion and path planning;aerial systems;perception and autonomy;reactive and sensor-based planning},
+  doi={10.1109/LRA.2020.2969191},
+  ISSN={2377-3774},
+  month={April},
+}
 ```
 
 ```
