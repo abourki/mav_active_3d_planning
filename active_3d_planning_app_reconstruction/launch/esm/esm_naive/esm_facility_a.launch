@@ -1,0 +1,78 @@
+<launch>
+  <!-- Gazebo arguments -->
+  <arg name="scene" value="facility_a"/>
+  <arg name="method" value="esm"/>
+
+  <arg name="quad_name" value="hummingbird"/>
+  <arg name="mav_name" value="$(arg quad_name)"/>
+  <arg name="uav_gt_odom_topic" value="$(arg mav_name)/ground_truth/odometry"/>
+  <arg name="uav_noisy_odom" value="/camera/noisy_odom"/>
+
+  <arg name="max_range" default="5."/>
+  <arg name="voxel_size" default="0.1"/>
+  <arg name="traj_topic" value="$(arg mav_name)/autopilot/reference_state" />
+  <arg name="whole_traj_topic" value="$(arg mav_name)/autopilot/trajectory" />
+  <arg name="cloud_topic" value="/camera/cloud"/>
+  <arg name="save_mesh_folder" value="$(find flybo_utils)/resources/flybo_eval/$(arg method)/$(arg scene)/mesh" />
+  <arg name="save_vol_folder" value="$(find flybo_utils)/resources/flybo_eval/$(arg method)/$(arg scene)/vol" />
+  <arg name="save_log_folder" value="$(find flybo_utils)/resources/flybo_eval/$(arg method)/$(arg scene)/log" />
+
+  <include file="$(find flybo_utils)/resources/launch/utils_launch/$(arg scene)_soa.launch">
+    <arg name="max_range" value="$(arg max_range)" />
+    <arg name="voxel_size" value="$(arg voxel_size)" />
+    <arg name="save_mesh_folder" value="$(arg save_mesh_folder)" />
+    <arg name="save_vol_folder" value="$(arg save_vol_folder)" />
+    <arg name="uav_noisy_odom" value="$(arg uav_noisy_odom)" />
+    <arg name="enableMapServer" value="false"/>
+
+  </include>
+
+
+  <!--  Planner arguments-->
+  <arg name="planner_config" default="planners/esm_cfg/$(arg scene).yaml"/>
+  <!--  Experiment arguments -->
+  <arg name="experiment_config" default="$(arg scene).yaml"/>
+  <rosparam command="load" file="$(find active_3d_planning_app_reconstruction)/cfg/planners/esm_map_cfg/$(arg experiment_config)"/>
+
+  <arg name="x_size" value="12" />
+  <arg name="y_size" value="14" />
+  <arg name="z_size" value="6" />
+  <arg name="origin_x" value="0" />
+  <arg name="origin_y" value="0" />
+  <arg name="origin_z" value="3" />
+
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="tf_base_to_cam" args="0 0 0.0 0 0 0 world tf_wc"/>
+
+  <group ns="planner">
+
+
+    <!-- Planner -->
+    <node name="planner_node" pkg="active_3d_planning_app_reconstruction" type="reconstruction_planner_node" output="screen">
+		  <!-- Voxblox Server -->
+      <remap from="planner_node/esdf_map_in" to="voxblox_node/esdf_map_out" />
+      <remap from="planner_node/tsdf_map_in" to="voxblox_node/tsdf_map_out" />
+      <param name="use_tf_transforms" value="true" />
+      <param name="update_mesh_every_n_sec" value="0" />
+
+    	<!-- General Settings -->
+      <remap from="odometry" to="/$(arg uav_noisy_odom)" />
+      <remap from="command/trajectory" to="/$(arg traj_topic)" />
+      <remap from="autopilot/trajectory" to="/$(arg whole_traj_topic)" />
+
+      <param name="map_core/resolution" value="$(arg voxel_size)" />
+      <param name="map_core/x_size" value="$(arg x_size)" />
+      <param name="map_core/y_size" value="$(arg y_size)" />
+      <param name="map_core/z_size" value="$(arg z_size)" />
+      <param name="map_core/origin_x" value="$(arg origin_x)" />
+      <param name="map_core/origin_y" value="$(arg origin_y)" />
+      <param name="map_core/origin_z" value="$(arg origin_z)" />
+      <param name="map_core/save_folder" value="$(arg save_vol_folder)" />
+      <param name="planner/save_log_folder" value="$(arg save_log_folder)" />
+      <!-- Build the Planner by Configuration     -->
+      <rosparam command="load" file="$(find active_3d_planning_app_reconstruction)/cfg/$(arg planner_config)"/>
+    </node>
+  </group>
+
+
+</launch>

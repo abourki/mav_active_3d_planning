@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>active_3d_planning_map_core</name>
+    <version>0.0.0</version>
+    <description>Map_core as map representation</description>
+
+    <author email="anthony.brunel@lirmm.fr">  Anthony Brunel</author>
+
+    <maintainer email="anthony.brunel@lirmm.fr"> Anthony Brunel</maintainer>
+
+    <license>BSD</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <buildtool_depend>catkin_simple</buildtool_depend>
+
+    <depend>active_3d_planning_core</depend>
+    <depend>map_core</depend>
+
+</package>

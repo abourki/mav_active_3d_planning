@@ -16,11 +16,10 @@
     <depend>active_3d_planning_core</depend>
     <depend>active_3d_planning_ros</depend>
     <depend>active_3d_planning_mav</depend>
-    <depend>active_3d_planning_voxblox</depend>
+    <depend>active_3d_planning_map_core</depend>
     <depend>roscpp</depend>
     <depend>rospy</depend>
-    <depend>voxblox_ros</depend>
-    <depend>voxblox</depend>
+    <depend>map_core</depend>
     <depend>trajectory_msgs</depend>
     <depend>mav_msgs</depend>
     <depend>std_msgs</depend>

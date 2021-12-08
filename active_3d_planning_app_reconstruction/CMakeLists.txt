@@ -5,13 +5,13 @@ find_package(catkin_simple REQUIRED)
 
 catkin_simple(ALL_DEPS_REQUIRED)
 
-add_definitions(-std=c++11)
+add_definitions(-std=c++14)
 
 catkin_package()
 
-cs_add_executable(eval_voxblox_node
-        src/experiments/eval_voxblox_node.cpp
-        )
+#cs_add_executable(eval_voxblox_node
+#        src/experiments/eval_voxblox_node.cpp
+#        )
 
 cs_add_executable(reconstruction_planner_node
         src/planner/reconstruction_planner_node.cpp

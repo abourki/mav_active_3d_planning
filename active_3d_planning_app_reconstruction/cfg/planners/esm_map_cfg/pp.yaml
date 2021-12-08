@@ -1,0 +1,33 @@
+# Experiment (Maze) specific parameters
+# Bounding boxes (in initialization frame, relative to PlayerStart)
+
+map_bounding_volume:
+  x_min: -15.5
+  x_max: 15.5
+  y_min: -16.5
+  y_max: 16.5
+  z_min: -0.3
+  z_max: 25.7
+
+evaluation_bounding_volume:
+  x_min: -15.5
+  x_max: 15.5
+  y_min: -16.5
+  y_max: 16.5
+  z_min: -0.3
+  z_max: 25.7
+
+target_bounding_volume:
+  x_min: -15.3
+  x_max: 15.3
+  y_min: -16.3
+  y_max: 16.3
+  z_min: -0.3
+  z_max: 25.5
+
+# System Constraints
+planner:
+ system_constraints:
+   v_max: 1.5
+   a_max: 2.5
+   yaw_rate_max: 1.57

@@ -16,6 +16,10 @@
 
 #include "active_3d_planning_core/planner/online_planner.h"
 
+#include "flybo_utils/plannerlogging.h"
+#include "flybo_utils/poly_trajectory_rpg.h"
+
+
 namespace active_3d_planning {
 namespace ros {
 
@@ -67,6 +71,10 @@ class RosPlanner : public OnlinePlanner {
   std::map<std::string, int>
       visualization_overwrite_counter_;  // store the previous number of
                                          // visualizations to overwrite in RVIZ
+
+  PolyTrajInterface _traj_generation;
+  PlannerLogging _logger;
+  std::string _log_path = "";
 
   // params
   double p_replan_pos_threshold_;  // m, when is the goal considered reached
