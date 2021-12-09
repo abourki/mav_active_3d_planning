@@ -18,3 +18,8 @@
 - git: {local-name: mavros, uri: 'git@github.com:ethz-asl/mavros.git'}
 - git: {local-name: catkin_boost_python_buildtool, uri: 'git@github.com:ethz-asl/catkin_boost_python_buildtool.git'}
 - git: {local-name: numpy_eigen, uri: 'git@github.com:ethz-asl/numpy_eigen.git'}
+
+- git: {local-name: flybo_utils, uri: 'git@github.com:anthonybrunel/flybo_utils.git'}
+- git: {local-name: vulkan_depth_vision, uri: 'git@github.com:anthonybrunel/vulkan_depth_vision.git'}
+- git: {local-name: tsdf_mapping, uri: 'git@github.com:anthonybrunel/tsdf_mapping.git'}
+- git: {local-name: map_core, uri: 'git@github.com:anthonybrunel/map_core.git'}

@@ -19,3 +19,10 @@
 - git: {local-name: catkin_boost_python_buildtool, uri: 'https://github.com/ethz-asl/catkin_boost_python_buildtool.git'}
 - git: {local-name: numpy_eigen, uri: 'https://github.com/ethz-asl/numpy_eigen.git'}
 - git: {local-name: catkin_grpc, uri: 'https://github.com/CogRob/catkin_grpc.git'}
+
+
+- git: {local-name: flybo_utils, uri: 'https://github.com/anthonybrunel/flybo_utils.git'}
+- git: {local-name: vulkan_depth_vision, uri: 'https://github.com:anthonybrunel/vulkan_depth_vision.git'}
+- git: {local-name: tsdf_mapping, uri: 'https://github.com:anthonybrunel/tsdf_mapping.git'}
+- git: {local-name: map_core, uri: 'https://github.com:anthonybrunel/map_core.git'}
+
